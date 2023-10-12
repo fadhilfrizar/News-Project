@@ -9,6 +9,7 @@ To set accessibility identifiers for your view controllers, follow these steps:
 
 1. Create a new custom view controller class that inherits from BaseViewController. This base class sets accessibility identifiers automatically. For example:
 
+    ```swift
     class BaseViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ To set accessibility identifiers for your custom collection view cells, follow t
 
 2. Create a new custom collection view cell class that inherits from `BaseCollectionViewCell`. This base class sets accessibility identifiers automatically. For example:
 
+    ```swift
     class BaseCollectionViewCell: UICollectionViewCell {
         override func awakeFromNib() {
             super.awakeFromNib()
