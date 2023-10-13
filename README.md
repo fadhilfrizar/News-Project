@@ -15,12 +15,21 @@ To set accessibility identifiers for your view controllers, follow these steps:
     class BaseViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            AccessibilityIdentifierHelper.setAccessibilityIdentifierController(for: self)
+            DispatchQueue.main.async {
+                AccessibilityIdentifierHelper.setAccessibilityIdentifierController(for: self)
+            }
         }
     }
-     class YourCustomViewController: BaseViewController {}
-   
+    ```swift
+    class BasePopupBottomViewController: BottomPopupViewController {
+        override func viewDidLoad() {
+            super.viewDidLoad()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    AccessibilityIdentifierHelper.setAccessibilityIdentifierController(for: self)
+                }
+        }
+    }
+    class YourCustomViewController: BaseViewController {}
     
    
 ## Base UICollectionViewCell
